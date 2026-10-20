@@ -1,0 +1,5 @@
+# Scripts de servidor/local — não necessários no GitHub Pages
+serve.ps1
+setup-rede.ps1
+crop.ps1
+gen-related.ps1
