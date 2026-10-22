@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Página não encontrada | Omar Calçados</title>
+  <script>
+    // GitHub Pages não tem reescrita de URL: /feminino/tenis/casual cai aqui.
+    // Redireciona para categoria.html, que restaura a URL amigável via history.
+    (function () {
+      var path = location.pathname;
+      var i = path.indexOf("/feminino");
+      if (i >= 0) {
+        var root = path.slice(0, i + 1);
+        location.replace(root + "categoria.html?__p=" + encodeURIComponent(path.slice(i + 1) + location.search));
+      }
+    })();
+  </script>
+  <style>
+    body { font-family: "Segoe UI", Roboto, Arial, sans-serif; text-align: center; padding: 80px 16px; color: #1a1a1a; }
+    a { color: #E11B22; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Página não encontrada</h1>
+  <p><a href="#" id="home">Voltar para a loja</a></p>
+  <script>
+    // Raiz do projeto no GitHub Pages: primeiro segmento da URL
+    var seg = location.pathname.split("/")[1];
+    document.getElementById("home").href = seg ? "/" + seg + "/" : "/";
+  </script>
+</body>
+</html>

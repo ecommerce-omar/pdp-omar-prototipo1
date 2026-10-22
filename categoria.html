@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO da categoria. Title, description, canonical e robots são
+       atualizados pelo categoria.js conforme a URL facetada.
+       Em produção, devem vir renderizados no servidor (SSR). -->
+  <title>Calçados Femininos: Tênis, Botas, Sandálias e mais | Omar Calçados</title>
+  <meta name="description" id="metaDesc" content="Calçados femininos na Omar Calçados: tênis, botas, sandálias, sapatilhas e chinelos das melhores marcas. Frete grátis a partir de R$ 199 e 1ª troca grátis." />
+  <meta name="robots" id="metaRobots" content="index, follow" />
+  <meta name="theme-color" content="#E11B22" />
+  <link rel="canonical" id="canonical" href="/feminino" />
+
+  <!-- Raiz do site: "/" no servidor local e "/pdp-omar-prototipo1/" no GitHub Pages.
+       A página é servida em /feminino, /feminino/tenis, /feminino/tenis/casual...,
+       então CSS/JS/imagens são carregados a partir da raiz detectada. -->
+  <script>
+    (function () {
+      var path = location.pathname;
+      var i = path.indexOf("/feminino");
+      var root = i >= 0 ? path.slice(0, i + 1) : path.replace(/[^\/]*$/, "");
+      // Retorno do redirect do 404.html (GitHub Pages): restaura a URL amigável
+      var back = new URLSearchParams(location.search).get("__p");
+      if (back !== null) history.replaceState(null, "", root + back);
+      window.OMAR_ROOT = root;
+      document.write('<link rel="stylesheet" href="' + root + 'styles.css?v=8" />' +
+                     '<link rel="stylesheet" href="' + root + 'categoria.css?v=5" />');
+    })();
+  </script>
+</head>
+<body class="plp-page">
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- ===== Header da loja Omar (mesmo da PDP) ===== -->
+  <header class="site-header" id="siteHeader">
+
+    <!-- Barra superior (topbar) -->
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <a class="topbar__whats" href="#">
+          <span class="topbar__ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="#25D366"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.02ZM12.04 20.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+          </span>
+          <span class="topbar__whats-txt">Compre via WhatsApp</span>
+        </a>
+
+        <p class="topbar__promo" role="status">
+          <svg class="topbar__promo-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h13l-1.5 9h-10z"/><path d="M16 7l2-4h3"/><circle cx="8" cy="20" r="1.4"/><circle cx="14" cy="20" r="1.4"/></svg>
+          Não serviu? <strong>1ª TROCA GRÁTIS</strong> em até 30 dias
+        </p>
+
+        <nav class="topbar__links" aria-label="Links institucionais">
+          <a href="#"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7Z"/><circle cx="12" cy="9" r="2.3"/></svg> Nossas Lojas</a>
+          <a href="#"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M4 9h16M8 13h8M8 16h5"/></svg> Blog Omar</a>
+          <a href="#"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Central de Ajuda</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Barra principal -->
+    <div class="mainbar">
+      <div class="container mainbar__inner">
+        <button type="button" class="hamburger" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <a class="brand-logo" href="/" aria-label="Omar Calçados - página inicial">
+          <span class="brand-logo__mark">Omar</span>
+          <span class="brand-logo__slogan">A gente <span class="brand-logo__heart">♥</span> sapatos</span>
+        </a>
+
+        <form class="searchbar" role="search" onsubmit="return false">
+          <label for="siteSearch" class="sr-only">O que você procura?</label>
+          <svg class="searchbar__lupa" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#9aa0a6" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="siteSearch" placeholder="Busque por produtos, marcas e categorias" autocomplete="off" />
+          <button type="submit" class="searchbar__btn">Buscar</button>
+        </form>
+
+        <nav class="header-actions" aria-label="Ações do usuário">
+          <a href="#" class="action">
+            <svg class="action__ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+            <span class="action__text">
+              <small>Bem-vindo</small>
+              <strong>Entrar / Cadastrar</strong>
+            </span>
+          </a>
+
+          <a href="#" class="action action--compact" aria-label="Favoritos">
+            <span class="action__badge-wrap">
+              <svg class="action__ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 20s-7-4.5-9.3-9.2C1 7 3 4 6 4c2 0 3.2 1.2 4 2.3C10.8 5.2 12 4 14 4c3 0 5 3 3.3 6.8C19 15.5 12 20 12 20Z"/></svg>
+              <span class="action__badge" id="favCount">3</span>
+            </span>
+          </a>
+
+          <a href="#" class="action action--cart" aria-label="Carrinho, 1 item">
+            <span class="action__badge-wrap">
+              <svg class="action__ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 4h2l2.4 12.3a1.5 1.5 0 0 0 1.5 1.2h8.2a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg>
+              <span class="action__badge" id="cartCount">1</span>
+            </span>
+            <span class="action__text">
+              <small>Meu</small>
+              <strong>Carrinho</strong>
+            </span>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Barra de navegação -->
+    <nav class="navbar" id="mainNav" aria-label="Categorias">
+      <div class="container navbar__inner">
+        <div class="navbar__brands-wrap has-mega">
+          <button type="button" class="navbar__brands" aria-haspopup="true" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            Todas as Marcas
+            <svg class="navbar__caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="mega">
+            <div class="mega__col">
+              <h4>Esportivos</h4>
+              <a href="#">Nike</a><a href="#">New Balance</a><a href="#">Adidas</a><a href="#">Asics</a><a href="#">Mizuno</a>
+            </div>
+            <div class="mega__col">
+              <h4>Casual</h4>
+              <a href="#">Vans</a><a href="#">Converse</a><a href="#">Lacoste</a><a href="#">Reserva</a>
+            </div>
+            <div class="mega__col">
+              <h4>Feminino</h4>
+              <a href="#">Vizzano</a><a href="#">Beira Rio</a><a href="#">Moleca</a><a href="#">Dakota</a>
+            </div>
+            <div class="mega__promo">
+              <span class="mega__promo-tag">Destaque</span>
+              <strong>New Balance 327v1</strong>
+              <p>A partir de R$ 559,99</p>
+              <a href="/index.html" class="mega__promo-link">Ver coleção →</a>
+            </div>
+          </div>
+        </div>
+
+        <ul class="navbar__links">
+          <li class="has-drop is-current">
+            <a href="/feminino" aria-current="page">Feminino <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+            <div class="drop">
+              <a href="/feminino/tenis">Tênis</a><a href="/feminino/sandalias">Sandálias</a><a href="/feminino/sapatilhas">Sapatilhas</a><a href="/feminino/botas">Botas</a><a href="/feminino/chinelos">Chinelos</a>
+            </div>
+          </li>
+          <li class="has-drop">
+            <a href="#">Masculino <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+            <div class="drop">
+              <a href="#">Tênis</a><a href="#">Casuais</a><a href="#">Chuteiras</a><a href="#">Botas</a><a href="#">Chinelos</a>
+            </div>
+          </li>
+          <li class="has-drop">
+            <a href="#">Infantil <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+            <div class="drop">
+              <a href="#">Meninos</a><a href="#">Meninas</a><a href="#">Bebês</a><a href="#">Escolar</a>
+            </div>
+          </li>
+          <li><a href="#">Bolsas &amp; Acessórios</a></li>
+          <li><a href="#">Lançamentos</a></li>
+        </ul>
+
+        <a href="#" class="navbar__promo">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+          Promoções
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal" class="container plp">
+
+    <!-- Breadcrumb com Schema.org BreadcrumbList (microdata).
+         Itens extras (categoria/estilo) são acrescentados pelo JS conforme a URL. -->
+    <nav class="breadcrumb" aria-label="Você está em">
+      <ol id="breadcrumbList" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+          <span itemprop="name">Calçados Femininos</span>
+          <link itemprop="item" href="/feminino" />
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </nav>
+
+    <!-- H1 dinâmico + ordenação -->
+    <div class="plp-head">
+      <h1 id="catTitle" class="plp-head__title">
+        <span id="catName">Calçados Femininos</span>
+        <span class="plp-head__total" id="catTotal">(30 produtos)</span>
+      </h1>
+
+      <div class="results__controls">
+        <button type="button" class="filters-open" id="filtersOpen" aria-controls="filters" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+          Filtrar <span class="filters-open__n" id="filtersOpenCount"></span>
+        </button>
+
+        <label class="sort">
+          <span class="sort__label">Ordenar por:</span>
+          <select id="sortSelect">
+            <option value="relevancia">Relevância</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+            <option value="desconto">Maior desconto</option>
+            <option value="avaliacao">Mais bem avaliados</option>
+            <option value="novos">Lançamentos</option>
+            <option value="az">Nome (A-Z)</option>
+          </select>
+        </label>
+
+        <div class="view-toggle" role="group" aria-label="Modo de exibição">
+          <button type="button" class="view-toggle__btn" data-view="grid" aria-pressed="true" aria-label="Exibir em grade">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><rect x="3" y="6" width="5" height="12" rx="1"/><rect x="9.5" y="6" width="5" height="12" rx="1"/><rect x="16" y="6" width="5" height="12" rx="1"/></svg>
+          </button>
+          <button type="button" class="view-toggle__btn" data-view="list" aria-pressed="false" aria-label="Exibir em lista">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M3 14h18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filtros sugeridos (chips) -->
+    <div class="qchips" id="quickFilters" role="group" aria-label="Filtros sugeridos"></div>
+
+    <!-- Anúncio de resultados para leitores de tela -->
+    <p class="sr-only" id="resultStatus" role="status" aria-live="polite"></p>
+
+    <div class="plp__layout">
+
+      <!-- ===== Filtros (sidebar no desktop / gaveta no mobile) ===== -->
+      <aside class="filters" id="filters" aria-labelledby="filtersTitle">
+        <div class="filters__head">
+          <h2 id="filtersTitle" class="filters__title">Filtrar</h2>
+          <button type="button" class="filters__close" id="filtersClose" aria-label="Fechar filtros">✕</button>
+        </div>
+
+        <div class="filters__scroll">
+          <!-- Filtros ativos -->
+          <div class="active-filters" id="activeFilters" hidden>
+            <div class="active-filters__head">
+              <strong>Filtros aplicados</strong>
+              <button type="button" class="link-btn" id="clearAll">Limpar tudo</button>
+            </div>
+            <ul class="active-filters__list" id="activeList"></ul>
+          </div>
+
+          <!-- Facetas (geradas via JS) -->
+          <div id="facets"></div>
+
+          <!-- Faixa de preço -->
+          <section class="facet" aria-labelledby="priceTitle">
+            <h3 class="facet__title facet__title--static" id="priceTitle">Faixas de preço</h3>
+            <div class="price-range">
+              <div class="price-range__track" id="priceTrack"><span class="price-range__fill" id="priceFill"></span></div>
+              <label class="sr-only" for="priceMin">Preço mínimo</label>
+              <input type="range" id="priceMin" class="price-range__input" step="100" />
+              <label class="sr-only" for="priceMax">Preço máximo</label>
+              <input type="range" id="priceMax" class="price-range__input" step="100" />
+            </div>
+            <p class="price-range__values" id="priceValues"></p>
+          </section>
+
+          <!-- Cor (gerada via JS) -->
+          <div id="facetsBottom"></div>
+        </div>
+
+        <div class="filters__foot">
+          <button type="button" class="btn btn--buy" id="filtersApply">Ver produtos</button>
+        </div>
+      </aside>
+      <div class="filters-backdrop" id="filtersBackdrop" hidden></div>
+
+      <!-- ===== Listagem ===== -->
+      <section class="results" aria-labelledby="productsTitle">
+        <h2 class="sr-only" id="productsTitle">Produtos</h2>
+
+        <!-- Faixa informativa de frete grátis + progresso do carrinho (não é filtro) -->
+        <aside class="ship-bar" aria-label="Benefícios de entrega">
+          <p class="ship-bar__info">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M2 6h12v9H2zM14 9h4l3 3v3h-7z"/><circle cx="6" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            <span><strong>Frete grátis acima de R$ 199</strong> <span class="ship-bar__dot" aria-hidden="true">·</span> 1ª troca grátis</span>
+            <a href="#" class="ship-bar__rules">Ver regras</a>
+          </p>
+          <div class="ship-bar__progress">
+            <p class="ship-bar__status" id="shipStatus" role="status" aria-live="polite"></p>
+            <div class="ship-bar__track" aria-hidden="true"><i id="shipFill"></i></div>
+          </div>
+        </aside>
+        <ul class="plp-grid" id="plpGrid"></ul>
+
+        <div class="plp-empty" id="plpEmpty" hidden>
+          <p><strong>Nenhum produto encontrado</strong> com os filtros selecionados.</p>
+          <button type="button" class="btn btn--outline" id="emptyClear">Limpar filtros</button>
+        </div>
+
+        <div class="plp-more" id="plpMore">
+          <p class="plp-more__info" id="moreInfo"></p>
+          <div class="plp-more__bar" aria-hidden="true"><i id="moreBar"></i></div>
+          <!-- Link real (?pagina=N) para ser rastreável; o JS carrega sem recarregar a página -->
+          <a href="/feminino?pagina=2" class="btn btn--outline plp-more__btn" id="loadMore">Carregar mais produtos</a>
+        </div>
+
+        <!-- Bloco de conteúdo SEO (texto fica no HTML mesmo recolhido, para indexação) -->
+        <section class="seo-text" aria-labelledby="seoTitle">
+          <h2 id="seoTitle" class="seo-text__title">Calçados Femininos na Omar Calçados</h2>
+          <div class="seo-text__content" id="seoContent">
+            <p>Encontre na Omar Calçados uma seleção completa de <strong>calçados femininos</strong> para todos os momentos: do tênis casual para o dia a dia à bota de cano alto para o inverno, passando por sandálias, sapatilhas, chinelos e sapatos sociais. São modelos das marcas mais desejadas, como Vizzano, Moleca, Beira Rio, Dakota, New Balance, Nike e Adidas, com numeração do 33 ao 44.</p>
+
+            <h3>Tênis femininos: conforto e estilo</h3>
+            <p>Os <a href="/feminino/tenis">tênis femininos</a> são coringas no guarda-roupa. Os modelos <a href="/feminino/tenis/casual">tênis casual feminino</a> combinam com jeans, vestidos e looks de trabalho, enquanto os <a href="/feminino/tenis/esportivo">tênis esportivos</a> oferecem amortecimento e leveza para caminhada e academia.</p>
+
+            <h3>Botas femininas para o inverno 2026</h3>
+            <p>Coturnos, botas de cano curto e de cano alto são tendência na estação. As <a href="/feminino/botas">botas femininas</a> da Omar têm opções em couro e sintético, com salto bloco, tratorado ou anabela, para unir proteção e elegância.</p>
+
+            <h3>Sandálias, rasteiras e chinelos</h3>
+            <p>Para os dias quentes, escolha entre <a href="/feminino/sandalias">sandálias femininas</a> de salto bloco, rasteiras práticas e <a href="/feminino/chinelos">chinelos</a> confortáveis. A <a href="/feminino?estilo=conforto">linha conforto</a> reúne modelos com palmilha anatômica e solado macio para usar o dia todo.</p>
+
+            <h3>Como escolher o tamanho certo</h3>
+            <p>Use o filtro de tamanho na lateral para ver apenas os modelos disponíveis na sua numeração. Em caso de dúvida, consulte o guia de tamanhos na página do produto. E se não servir, a 1ª troca é grátis em até 30 dias.</p>
+
+            <h3>Vantagens de comprar na Omar Calçados</h3>
+            <ul>
+              <li>Frete grátis em compras a partir de R$ 199;</li>
+              <li>5% de desconto no Pix e parcelamento em até 10x sem juros;</li>
+              <li>1ª troca grátis e produtos 100% originais com nota fiscal.</li>
+            </ul>
+          </div>
+          <button type="button" class="seo-text__toggle" id="seoToggle" aria-expanded="false" aria-controls="seoContent">
+            Ler mais sobre Calçados Femininos
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Omar Calçados — protótipo de página de categoria. Produtos, preços e estoque são ilustrativos.</p>
+    </div>
+  </footer>
+
+  <!-- Botões flutuantes -->
+  <div class="floaters">
+    <a href="#" class="floater floater--whats" aria-label="Fale conosco pelo WhatsApp">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="#fff" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.02Zm-2.49 9.08c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74 1.47.64 2.05.69 2.79.58.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+    </a>
+    <div class="floater-club" id="floaterClub">
+      <button type="button" class="floater-club__close" id="floaterClubClose" aria-label="Fechar atalho do Club Omar">✕</button>
+      <a href="#" class="floater floater--club" aria-label="Conheça o Club Omar">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.write('<script src="' + OMAR_ROOT + 'categoria-data.js?v=5"><\/script>' +
+                   '<script src="' + OMAR_ROOT + 'categoria.js?v=5"><\/script>');
+  </script>
+</body>
+</html>
